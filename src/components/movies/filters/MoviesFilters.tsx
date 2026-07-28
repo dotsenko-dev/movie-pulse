@@ -1,0 +1,9 @@
+import { genreService } from "@/api/services/genre.service";
+import { MoviesFiltersClient } from "./MoviesFiltersClient";
+
+export const MoviesFilters = async () => {
+  const genreData = await genreService.getAll();
+  const genres = genreData.genres || [];
+
+  return <MoviesFiltersClient genres={genres} />;
+};

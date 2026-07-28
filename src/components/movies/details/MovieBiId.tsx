@@ -1,0 +1,37 @@
+import { movieService } from "@/api/services/movie.service";
+import { PosterPreview } from "../components/PosterPreview";
+import { GenreList } from "../filters/GenreList";
+
+type PropsType = {
+  params: Promise<{ id: string }>;
+};
+
+export const MovieBiId = async ({ params }: PropsType) => {
+  const { id } = await params;
+  const movie = await movieService.getById(id);
+
+  return (
+    <div>
+      <PosterPreview posterPath={movie.poster_path} title={movie.title} />
+
+      <h1>{movie.title}</h1>
+      {movie.tagline && <p>{movie.tagline}</p>}
+
+      <GenreList genres={movie.genres} />
+
+      <p>
+        Rating: {movie.vote_average} ({movie.vote_count} votes)
+      </p>
+      <p>Runtime: {movie.runtime} min</p>
+      <p>Release Date: {movie.release_date}</p>
+
+      <h2>Overview</h2>
+      <p>{movie.overview}</p>
+
+      <div>
+        <p>Budget: ${movie.budget}</p>
+        <p>Revenue: ${movie.revenue}</p>
+      </div>
+    </div>
+  );
+};
