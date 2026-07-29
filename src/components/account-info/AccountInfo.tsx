@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { accountService } from "@/api/services/account.service";
 import styles from "./AccountInfo.module.css";
+import { API_CONSTANTS } from "@/constants/api-constants";
 
 export const AccountInfo = async () => {
   const account = await accountService.getAccount();
@@ -12,7 +13,7 @@ export const AccountInfo = async () => {
       <div className={styles.card}>
         {avatarPath ? (
           <Image
-            src={`https://image.tmdb.org/t/p/w300${avatarPath}`}
+            src={`${API_CONSTANTS.IMAGE_BASE_URL}/w300${avatarPath}`}
             alt={account.username}
             className={styles.avatar}
           />
