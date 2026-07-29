@@ -10,7 +10,7 @@ export const Menu = () => {
         </li>
 
         <li>
-          <Link href={"/movies"}>Movies</Link>
+          <Link href={"/movies?page=1"}>Movies</Link>
         </li>
       </ul>
     </nav>

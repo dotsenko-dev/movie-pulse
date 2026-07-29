@@ -1,14 +1,19 @@
 import Link from "next/link";
+import styles from "./page.module.css";
 
 export default function Home() {
   return (
-    <main>
-      <section>
-        <h1>Welcome to Movies App</h1>
+    <main className={styles.page}>
+      <section className={styles.hero}>
+        <h1 className={styles.title}>Welcome to Movies App</h1>
 
-        <p>Discover popular movies, genres and latest releases.</p>
+        <p className={styles.description}>
+          Discover popular movies, genres and latest releases.
+        </p>
 
-        <Link href="/movies">Browse movies</Link>
+        <Link className={styles.link} href="/movies">
+          Browse movies
+        </Link>
       </section>
     </main>
   );

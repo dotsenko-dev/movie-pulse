@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { useTransition } from "react";
+import { useEffect, useState, useTransition } from "react";
 import styles from "./SearchForm.module.css";
 
 export const SearchForm = () => {
@@ -9,10 +9,19 @@ export const SearchForm = () => {
   const searchParams = useSearchParams();
   const [isPending, startTransition] = useTransition();
 
-  const search = searchParams.get("query") || "";
+  const [search, setSearch] = useState(() => searchParams.get("query") || "");
+
+  useEffect(() => {
+    if (!searchParams.get("query")) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setSearch("");
+    }
+  }, [searchParams]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
+
+    setSearch(value);
 
     startTransition(() => {
       if (value.trim()) {
@@ -28,8 +37,7 @@ export const SearchForm = () => {
       <input
         className={styles.input}
         type="text"
-        defaultValue={search}
-        key={search}
+        value={search}
         onChange={handleInputChange}
         placeholder="Search movies..."
       />

@@ -2,6 +2,7 @@ import { Header } from "@/components/header/Header";
 import { SearchForm } from "@/components/movies/filters/search-form/SearchForm";
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Movies App",
@@ -17,11 +18,13 @@ export default function RootLayout({
   return (
     <html>
       <body>
-        <Header />
+        <header className="stickyTop">
+          <Header />
 
-        <Suspense>
-          <SearchForm />
-        </Suspense>
+          <Suspense>
+            <SearchForm />
+          </Suspense>
+        </header>
 
         <main>{children}</main>
       </body>

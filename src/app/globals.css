@@ -8,17 +8,15 @@ body {
   color: white;
 }
 
-.searchBar {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 2rem;
-  background-color: black;
-  border-top: 0.0625rem solid dimgray;
-  border-bottom: 0.0625rem solid dimgray;
-}
-
 main {
   width: 100%;
+}
+
+.stickyTop {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: black;
 }
 
 @media (max-width: 48rem) {
