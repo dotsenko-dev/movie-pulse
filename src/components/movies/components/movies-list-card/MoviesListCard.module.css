@@ -1,0 +1,35 @@
+.card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 0.5rem 1rem gray;
+}
+
+.infoBox {
+  max-height: 9rem;
+  padding: 0.75rem;
+  color: white;
+}
+
+.infoContent {
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+@media (max-width: 30rem) {
+  .infoBox {
+    max-height: 8rem;
+    padding: 0.5rem;
+  }
+}

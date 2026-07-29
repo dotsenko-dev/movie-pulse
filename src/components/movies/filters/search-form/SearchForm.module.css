@@ -1,0 +1,42 @@
+.form {
+  width: min(100%, 40rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 0.0625rem solid gray;
+  border-radius: 2rem;
+
+  background-color: white;
+  color: black;
+  font-size: 1rem;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input:focus {
+  border-color: skyblue;
+  box-shadow: 0 0 0 0.2rem rgba(135, 206, 235, 0.3);
+}
+
+.loading {
+  color: lightgray;
+  white-space: nowrap;
+}
+
+@media (max-width: 30rem) {
+  .form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .loading {
+    text-align: center;
+  }
+}

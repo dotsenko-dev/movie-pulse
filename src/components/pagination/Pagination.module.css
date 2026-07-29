@@ -1,0 +1,44 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.pagination a,
+.pagination span {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.pagination a {
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pagination a:hover {
+  background-color: cornflowerblue;
+  transform: translateY(-0.1rem);
+}
+
+.pagination span {
+  background-color: darkslategray;
+}
+
+@media (max-width: 30rem) {
+  .pagination {
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .pagination a,
+  .pagination span {
+    padding: 0.4rem 0.7rem;
+  }
+}

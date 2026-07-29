@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: black;
+  border-top: 0.0625rem solid dimgray;
+  border-bottom: 0.0625rem solid dimgray;
+}
+
+main {
+  width: 100%;
+}
+
+@media (max-width: 48rem) {
+  .searchBar {
+    padding: 1rem;
+  }
+
+  main {
+    padding: 1rem;
+  }
+}

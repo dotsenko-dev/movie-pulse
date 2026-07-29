@@ -1,9 +1,11 @@
-import { Menu } from "@/components/menu/Menu";
+import { Header } from "@/components/header/Header";
+import { SearchForm } from "@/components/movies/filters/search-form/SearchForm";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Каталог фільмів",
-  description: "Знайдіть найкращі фільми, жанри та новинки кіно",
+  title: "Movies App",
+  description:
+    "Movies App — каталог фільмів з рейтингами, жанрами та інформацією про кіно.",
 };
 
 export default function RootLayout({
@@ -12,10 +14,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html>
       <body>
-        <Menu />
-        {children}
+        <Header />
+
+        <div>
+          <SearchForm />
+        </div>
+
+        <main>{children}</main>
       </body>
     </html>
   );

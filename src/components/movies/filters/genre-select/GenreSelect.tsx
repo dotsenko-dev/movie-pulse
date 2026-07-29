@@ -2,6 +2,7 @@
 
 import { GenreType } from "@/schemas/IMovieDetailsSchema";
 import { useRouter, useSearchParams } from "next/navigation";
+import styles from "./GenreSelect.module.css";
 
 type PropsType = {
   genres: GenreType[];
@@ -34,9 +35,13 @@ export const GenreSelect = ({ genres }: PropsType) => {
   };
 
   return (
-    <div>
-      <label>Genre: </label>
-      <select value={currentGenre} onChange={handleChange}>
+    <div className={styles.wrapper}>
+      <label className={styles.label}>Genre: </label>
+      <select
+        value={currentGenre}
+        onChange={handleChange}
+        className={styles.select}
+      >
         <option value="">All genres</option>
         {genres.map((genre) => (
           <option key={genre.id} value={genre.id}>

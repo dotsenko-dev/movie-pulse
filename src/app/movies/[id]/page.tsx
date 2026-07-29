@@ -1,4 +1,4 @@
-import { MovieBiId } from "@/components/movies/details/MovieBiId";
+import { MovieBiId } from "@/components/movies/details/movie-byId/MovieBiId";
 import { Metadata } from "next";
 import { SearchParams } from "next/dist/server/request/search-params";
 

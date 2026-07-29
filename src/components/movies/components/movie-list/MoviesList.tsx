@@ -1,9 +1,11 @@
 import { movieService } from "@/api/services/movie.service";
 import { createQueryObject } from "@/utils/ulr";
 import { SearchParams } from "next/dist/server/request/search-params";
-import { Pagination } from "../../pagination/Pagination";
-import { MoviesListCard } from "./MoviesListCard";
+import { Pagination } from "../../../pagination/Pagination";
+import { MoviesListCard } from "../movies-list-card/MoviesListCard";
 import { redirect } from "next/navigation";
+import { genreService } from "@/api/services/genre.service";
+import styles from "./MovieList.module.css";
 
 type PropsType = {
   searchParams: Promise<SearchParams>;
@@ -21,12 +23,16 @@ export const MoviesList = async ({ searchParams }: PropsType) => {
     redirect(`/movies?${params}`);
   }
 
-  const data = await movieService.getAll({
-    ...query,
-    page: parsedPage.toString(),
-  });
+  const [data, genreData] = await Promise.all([
+    movieService.getAll({
+      ...query,
+      page: parsedPage.toString(),
+    }),
+    genreService.getAll(),
+  ]);
 
   const { results, page, total_pages } = data;
+  const allGenres = genreData.genres || [];
 
   return (
     <div>
@@ -36,9 +42,11 @@ export const MoviesList = async ({ searchParams }: PropsType) => {
         searchParams={searchParams}
       />
 
-      {results.map((movie) => (
-        <MoviesListCard movie={movie} key={movie.id} />
-      ))}
+      <div className={styles.list}>
+        {results.map((movie) => (
+          <MoviesListCard movie={movie} allGenres={allGenres} key={movie.id} />
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,0 +1,20 @@
+.info {
+  color: white;
+}
+
+.info h3 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.info p {
+  margin: 0.5rem 0;
+  font-size: 0.85rem;
+  color: lightgray;
+  line-height: 1.4;
+}
+
+.genresContainer {
+  pointer-events: auto;
+  margin: 0.5rem 0;
+}

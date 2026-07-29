@@ -1,0 +1,67 @@
+.container {
+  min-height: calc(100vh - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  padding: 2rem;
+}
+
+.card {
+  width: min(100%, 25rem);
+  padding: 2rem;
+  border-radius: 1rem;
+  background: darkslategray;
+  color: white;
+  text-align: center;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.card h1 {
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  overflow-wrap: anywhere;
+}
+
+.card p {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.8rem 0;
+  color: lightgray;
+}
+
+.card b {
+  color: white;
+}
+
+.avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.2rem solid skyblue;
+}
+
+.placeholder {
+  width: 9rem;
+  height: 9rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: gray;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3.5rem;
+  font-weight: bold;
+}
+
+@media (max-width: 30rem) {
+  .card {
+    padding: 1.5rem;
+  }
+
+  .card p {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+}

@@ -1,7 +1,8 @@
-import { MoviesList } from "@/components/movies/components/MoviesList";
+import { MoviesList } from "@/components/movies/components/movie-list/MoviesList";
 import { MoviesFilters } from "@/components/movies/filters/MoviesFilters";
 import { Metadata } from "next";
 import { SearchParams } from "next/dist/server/request/search-params";
+import styles from "./MoviesPage.module.css";
 
 export const metadata: Metadata = {
   title: "All Movies",
@@ -14,7 +15,7 @@ type PropsType = {
 
 const MoviesPage = async ({ searchParams }: PropsType) => {
   return (
-    <div>
+    <div className={styles.page}>
       <MoviesFilters />
       <MoviesList searchParams={searchParams} />
     </div>

@@ -2,6 +2,7 @@ import { API_CONSTANTS } from "@/constants/api-constants";
 import { createQueryString } from "@/utils/ulr";
 import { SearchParams } from "next/dist/server/request/search-params";
 import Link from "next/link";
+import styles from "./Pagination.module.css";
 
 type PropsType = {
   apiPage: number;
@@ -32,7 +33,7 @@ export const Pagination = async ({
   };
 
   return (
-    <div>
+    <div className={styles.pagination}>
       {isPrevDisabled ? (
         <span>Prev</span>
       ) : (

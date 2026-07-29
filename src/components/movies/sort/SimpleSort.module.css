@@ -1,0 +1,47 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: black;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.select {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid gray;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.button {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: cornflowerblue;
+  transform: translateY(-0.1rem);
+}
+
+@media (max-width: 30rem) {
+  .wrapper {
+    justify-content: space-between;
+  }
+
+  .select {
+    flex: 1;
+  }
+}

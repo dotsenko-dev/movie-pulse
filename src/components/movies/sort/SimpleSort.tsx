@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import styles from "./SimpleSort.module.css";
 
 export const SimpleSort = () => {
   const router = useRouter();
@@ -32,16 +33,24 @@ export const SimpleSort = () => {
   };
 
   return (
-    <div>
-      <label>Sort by: </label>
-      <select id="sort" value={field} onChange={handleSelectChange}>
+    <div className={styles.wrapper}>
+      <label className={styles.label}>Sort by: </label>
+      <select
+        id="sort"
+        value={field}
+        onChange={handleSelectChange}
+        className={styles.select}
+      >
         <option value="popularity">Popular</option>
         <option value="vote_average">Rating</option>
         <option value="primary_release_date">Release Date</option>
       </select>
 
-      {/* Окрема кнопка зі стрілкою праворуч */}
-      <button type="button" onClick={handleToggleDirection}>
+      <button
+        type="button"
+        onClick={handleToggleDirection}
+        className={styles.button}
+      >
         {isAsc ? "\u2191" : "\u2193"}
       </button>
     </div>

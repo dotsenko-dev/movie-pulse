@@ -1,0 +1,62 @@
+.movie {
+  display: grid;
+  grid-template-columns: minmax(15rem, 25rem) 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: white;
+  color: black;
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.movie h1 {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+.movie h2 {
+  margin-top: 2rem;
+}
+
+.movie p {
+  line-height: 1.5;
+  color: dimgray;
+}
+
+.movie > div:last-child {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+@media (max-width: 48rem) {
+  .movie {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+
+  .movie img {
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+
+  .movie h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .movie {
+    padding: 0.75rem;
+  }
+
+  .movie img {
+    max-width: 100%;
+  }
+}

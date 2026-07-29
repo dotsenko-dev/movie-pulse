@@ -16,6 +16,12 @@ export const IGenreSchema = z.object({
 });
 export type GenreType = z.infer<typeof IGenreSchema>;
 
+export const IGenresResponseSchema = z.object({
+  genres: z.array(IGenreSchema),
+});
+
+export type GenresResponseType = z.infer<typeof IGenresResponseSchema>;
+
 export const IProductionCompanySchema = z.object({
   id: z.number(),
   logo_path: z.string().nullable().optional(),

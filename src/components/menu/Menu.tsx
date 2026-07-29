@@ -1,17 +1,18 @@
 import Link from "next/link";
+import styles from "./Menu.module.css";
 
 export const Menu = () => {
   return (
-    <div>
-      <ul>
+    <nav>
+      <ul className={styles.menu}>
         <li>
           <Link href={"/"}>Home</Link>
         </li>
 
         <li>
-          <Link href={"/movies"}>Movies page</Link>
+          <Link href={"/movies"}>Movies</Link>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 };

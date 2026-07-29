@@ -1,0 +1,59 @@
+.header {
+  min-height: 4rem;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: black;
+  color: white;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.logo a:hover {
+  color: skyblue;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: white;
+}
+
+.avatar {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+@media (max-width: 48rem) {
+  .header {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+  }
+}
