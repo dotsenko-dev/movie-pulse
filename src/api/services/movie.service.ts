@@ -13,7 +13,7 @@ export const movieService = {
     return IMovieDetailsSchema.parse(response.data);
   },
 
-  getAll: async (query?: Record<string, string>): Promise<MovieType> => {
+  getMoovies: async (query?: Record<string, string>): Promise<MovieType> => {
     const endpoint = query?.query
       ? API_ENDPOINT.MOVIES_SEARCH
       : API_ENDPOINT.MOVIES_ALL;

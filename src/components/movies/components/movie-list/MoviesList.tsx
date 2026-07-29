@@ -24,11 +24,11 @@ export const MoviesList = async ({ searchParams }: PropsType) => {
   }
 
   const [data, genreData] = await Promise.all([
-    movieService.getAll({
+    movieService.getMoovies({
       ...query,
       page: parsedPage.toString(),
     }),
-    genreService.getAll(),
+    genreService.getGenres(),
   ]);
 
   const { results, page, total_pages } = data;

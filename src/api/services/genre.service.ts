@@ -7,7 +7,7 @@ import { unstable_cache } from "next/cache";
 import { axiosInstance } from "../instance";
 
 export const genreService = {
-  getAll: unstable_cache(
+  getGenres: unstable_cache(
     async (): Promise<GenresResponseType> => {
       const response = await axiosInstance.get<GenresResponseType>(
         API_ENDPOINT.GENRES_MOVIE,
